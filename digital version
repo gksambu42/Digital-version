@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Piper PA-28-140/180 Checklist</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h2 { color: darkgreen; }
+    h3 { color: darkred; }
+    label { display: block; margin: 5px 0; }
+    input[type="checkbox"] { transform: scale(1.2); margin-right: 8px; }
+  </style>
+</head>
+<body>
+  <h2>✈️ Normal Operations</h2>
+  <label><input type="checkbox" id="brakes"> Brakes Hold</label>
+  <label><input type="checkbox" id="mixture"> Mixture Rich</label>
+  <label><input type="checkbox" id="throttle"> Throttle 1/4''</label>
+  <label><input type="checkbox" id="master"> Master On / Beacon On</label>
+  <label><input type="checkbox" id="prime"> Prime As Required</label>
+  <label><input type="checkbox" id="ignition"> Ignition Start → Oil Press Check</label>
+
+  <h3>⚠️ Emergencies</h3>
+  <label><input type="checkbox" id="glide"> Glide 80 MPH</label>
+  <label><input type="checkbox" id="fuel"> Fuel OFF / Mixture Cutoff / Ignition OFF</label>
+  <label><input type="checkbox" id="mayday"> MAYDAY, 7700, ELT ON</label>
+
+  <script>
+    // Save and restore checkbox states using localStorage
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+      // Restore saved state
+      cb.checked = localStorage.getItem(cb.id) === 'true';
+      // Save state on change
+      cb.addEventListener('change', () => {
+        localStorage.setItem(cb.id, cb.checked);
+      });
+    });
+  </script>
+</body>
+</html>
