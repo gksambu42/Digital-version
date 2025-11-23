@@ -1,0 +1,131 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.25in]{geometry}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{qrcode} % QR code generator
+\usepackage{fontawesome5} % for airplane icon
+\setlist{nosep,leftmargin=*}
+\pagenumbering{gobble}
+
+% Define colors
+\definecolor{opsgreen}{RGB}{220,255,220} % light green background
+\definecolor{emred}{RGB}{255,220,220}    % light red background
+\definecolor{darkgreen}{RGB}{0,120,0}
+\definecolor{darkred}{RGB}{180,0,0}
+\definecolor{cutline}{RGB}{150,150,150}  % thin gray cut line
+
+% Section styles
+\titleformat{\section}{\bfseries\large}{}{0em}{}
+\titleformat{\subsection}{\bfseries\normalsize}{}{0em}{}
+
+\begin{document}
+
+% ================= MASTER SHEET =================
+% Four cards per page (two columns, two rows)
+
+\begin{multicols}{2}
+
+% -------- FRONT SIDE (Normal Ops) --------
+\fcolorbox{cutline}{opsgreen}{%
+\begin{minipage}[t][5in][t]{3in}
+\section*{\textcolor{darkgreen}{✈️ Piper PA-28-140/180 Checklist}}
+\noindent\textbf{\textcolor{darkgreen}{Tail Number: N4546R}} \\
+Emergency Freq: 121.5 (Guard) \\
+Transponder: 7700 \\
+Best Glide: \textbf{80 MPH}
+
+\subsection*{\textcolor{darkgreen}{✈️ Start / Run-Up}}
+- Brakes Hold  
+- Mixture Rich  
+- Throttle 1/4''  
+- Master On / Beacon On  
+- Prime As Required  
+- Ignition Start → Oil Press Check  
+- Controls Free  
+- Fuel Selector Tank  
+- Trim Set  
+- Throttle 2000 RPM → Mag/Carb Heat/Gauges Check  
+
+\subsection*{\textcolor{darkgreen}{✈️ Takeoff / Climb}}
+- Flaps Up  
+- Carb Heat Off  
+- Throttle Full  
+- Rotate 55 MPH → Climb 85 MPH  
+
+\subsection*{\textcolor{darkgreen}{✈️ Cruise / Descent}}
+- Power Set / Mixture Lean  
+- Gauges / Fuel Check  
+- Fuel Proper Tank  
+- Mixture Rich  
+- Carb Heat On  
+- Radios / Altimeter Set  
+
+\subsection*{\textcolor{darkgreen}{✈️ Landing / Shutdown}}
+- Fuel Proper Tank / Mixture Rich  
+- Carb Heat On / Seatbelts Secure  
+- Final 75 MPH → Mains First  
+- Flaps Up / Lights Off / Trim Set  
+- Avionics Off / Mixture Cutoff  
+- Ignition \& Master Off  
+
+\vfill
+\begin{center}
+\faPlane \; \textit{\textcolor{darkgreen}{Prepaired by Captain Sambu}} \hspace{0.5cm}
+\qrcode[height=0.6in]{https://example.com/N4546R-checklist} \\
+\scriptsize \textcolor{darkgreen}{Scan for Digital Checklist}
+\end{center}
+\end{minipage}
+}
+
+% -------- BACK SIDE (Emergencies) --------
+\fcolorbox{cutline}{emred}{%
+\begin{minipage}[t][5in][t]{3in}
+\section*{\textcolor{darkred}{⚠️ Emergency Procedures}}
+\noindent\textbf{\textcolor{darkred}{Tail Number: N4546R}}
+
+\subsection*{\textcolor{darkred}{⚠️ Power Loss After TO}}
+- Control Aircraft  
+- Glide 80 MPH  
+- Fuel OFF / Mixture Cutoff / Ignition OFF  
+- Flaps As Needed / Master OFF  
+
+\subsection*{\textcolor{darkred}{⚠️ Power Loss In Flight}}
+- Glide 80 MPH  
+- Fuel ON (Switch Tanks)  
+- Mixture Rich / Carb Heat ON  
+- Ignition L/R/BOTH / Primer Locked  
+- If No Restart → MAYDAY, 7700, ELT ON, Secure Engine  
+
+\subsection*{\textcolor{darkred}{🔥 Fires}}
+\textbf{Engine Fire (Flight)}  
+- Throttle Closed, Mixture Cutoff, Fuel OFF, Master OFF, Cabin Heat OFF, Extinguisher, Land  
+
+\textbf{Electrical Fire}  
+- Master OFF, Switches OFF, Vents OPEN, Cabin Heat OFF, Extinguisher, Restore Essential Power  
+
+\subsection*{\textcolor{darkred}{⚠️ Other Emergencies}}
+- Icing: Carb Heat ON, Flaps UP, Faster Approach  
+- Spin: Idle, Neutral, Opposite Rudder, Forward Elevator  
+- Emergency Descent: Idle, Rich, Bank 45°, 120 MPH  
+
+\section*{\textcolor{darkred}{✈️ Reference Speeds}}
+Best Glide: 80 MPH \\
+Rotate: 55 MPH \\
+Climb: 85 MPH \\
+Final: 75 MPH \\
+Stall Clean/Dirty: 55 / 49 MPH  
+
+\vfill
+\begin{center}
+\faPlane \; \textit{\textcolor{darkred}{Prepaired by Captain Sambu}} \hspace{0.5cm}
+\qrcode[height=0.6in]{https://example.com/N4546R-emergencies} \\
+\scriptsize \textcolor{darkred}{Scan for Emergency Procedures}
+\end{center}
+\end{minipage}
+}
+
+\end{multicols}
+
+\end{document}
